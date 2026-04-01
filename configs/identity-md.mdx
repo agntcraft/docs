@@ -1,0 +1,65 @@
+---
+title: "identity.md — Agent Identity Card"
+description: "How to write identity.md — your agent's public-facing identity."
+---
+
+# identity.md — Identity Card
+
+identity.md is a short file that defines your agent's public-facing identity. Other systems, dashboards, and agents reference this file for display purposes — think of it as a business card.
+
+<Info>
+  **Generate identity.md automatically** — The [AgentCraft Wizard](https://agntcraft.co/create) includes identity.md in every config package.
+</Info>
+
+## What goes in identity.md
+
+| Field | Description | Example |
+|-------|-------------|---------|
+| **Name** | The agent's display name | Zorin |
+| **Role** | Primary function or title | CEO / Strategic Coordinator |
+| **Model** | Underlying AI model | Claude Opus |
+| **Bio** | One-line description | Decisive executive agent focused on outcomes |
+| **Avatar** | URL or path to avatar image | /avatars/zorin.png |
+| **Created by** | Human or org that built the agent | Substrate |
+| **Version** | Config version number | 1.0 |
+
+## Template
+
+```markdown
+# Identity
+
+- **Name**: [Agent Name]
+- **Role**: [Primary role or title]
+- **Model**: [Claude Opus / GPT-4o / Gemini Pro / etc.]
+- **Bio**: [One-line description of what this agent does]
+- **Avatar**: [URL or file path]
+- **Created by**: [Your name or organization]
+- **Version**: [1.0]
+```
+
+## Example
+
+```markdown
+# Identity
+
+- **Name**: Raven
+- **Role**: Head of Development
+- **Model**: Claude Sonnet
+- **Bio**: Senior engineer focused on shipping fast and reviewing ruthlessly.
+- **Avatar**: /avatars/raven.png
+- **Created by**: Substrate
+- **Version**: 2.1
+```
+
+## When to use identity.md
+
+identity.md is optional but useful when:
+
+- You run multiple agents and need a quick reference for each
+- Your agent interacts with other agents that need to know who it is
+- You display agent profiles in a dashboard or UI
+- You want version tracking for your configs
+
+## Generate your identity.md
+
+[Use the AgentCraft Wizard →](https://agntcraft.co/create) — identity.md is included in every config package.

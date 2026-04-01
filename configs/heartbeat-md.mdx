@@ -1,0 +1,87 @@
+---
+title: "heartbeat.md — Periodic Task Checklist"
+description: "How to write heartbeat.md — the recurring routine for your AI agent."
+seo:
+  title: "heartbeat.md Guide — AI Agent Periodic Tasks Template | AgentCraft"
+  description: "Create a heartbeat.md file for your AI agent. Define what your agent checks every cycle — task queues, inbox, status reports, and more."
+---
+
+# heartbeat.md — Periodic Tasks
+
+heartbeat.md defines what your agent does on every cycle. Think of it as a cron job description in natural language — a checklist your agent runs through at regular intervals to stay on top of its responsibilities.
+
+<Info>
+  **Generate heartbeat.md automatically** — The [AgentCraft Wizard](https://agntcraft.co/create) builds a heartbeat routine matched to your agent's role and tasks.
+</Info>
+
+## How it works
+
+Most agent frameworks support a heartbeat loop — a recurring trigger that fires on a schedule (every hour, every day, or on-demand). When the heartbeat fires, your agent reads heartbeat.md and works through the checklist.
+
+The file is split into frequency tiers:
+
+### Every cycle
+
+Tasks the agent runs on every single heartbeat. Keep these lightweight — they run frequently.
+
+- Check inbox or message queue for new items
+- Review pending tasks and pick up the next one
+- Post any queued content (tweets, messages, updates)
+- Report status to overseer or log file
+
+### Daily
+
+Heavier tasks that only need to happen once a day.
+
+- Review overall project status
+- Update planning documents or agendas
+- Check for stale tasks or missed deadlines
+- Summarize the day's activity
+
+### Weekly
+
+Strategic or maintenance tasks.
+
+- Run a competitor or market scan
+- Generate a weekly performance report
+- Propose priorities for the coming week
+- Clean up old files, logs, or drafts
+
+## Template
+
+```markdown
+# Heartbeat Routine
+
+## Every Cycle
+- [ ] Check inbox for new messages or tasks
+- [ ] Review pending task queue — pick up next item
+- [ ] Post any queued tweets or scheduled content
+- [ ] Write status update to status.md
+- [ ] Report blockers to overseer immediately
+
+## Daily
+- [ ] Review project status and update agenda.md
+- [ ] Check for overdue or stale tasks
+- [ ] Summarize day's activity in daily-log.md
+- [ ] Review metrics dashboard (if applicable)
+
+## Weekly
+- [ ] Generate weekly summary report
+- [ ] Propose priorities for next week
+- [ ] Run competitor/market scan
+- [ ] Clean up temporary files and drafts
+- [ ] Review and update own configuration if needed
+```
+
+## Tips for writing heartbeat.md
+
+- **Keep cycle tasks fast.** If a task takes more than a few seconds, move it to daily or weekly.
+- **Use checkboxes.** Many frameworks treat `- [ ]` as actionable items and track completion.
+- **Be specific.** "Check inbox" is better than "stay updated." Name the exact source.
+- **Include reporting.** Every cycle should end with some form of status output so you can verify the agent is working.
+
+## Generate your heartbeat.md
+
+[Use the AgentCraft Wizard →](https://agntcraft.co/create) to generate a heartbeat routine matched to your agent's role.
+
+Or browse [pre-made configs](https://agntcraft.co/browse) to see real heartbeat routines from production agents.

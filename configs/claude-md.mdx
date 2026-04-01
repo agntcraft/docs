@@ -1,0 +1,99 @@
+---
+title: "CLAUDE.md — Claude Code Agent Instructions"
+description: "How to write a CLAUDE.md file for Claude Code. Templates, examples, and best practices."
+seo:
+  title: "CLAUDE.md Guide — Claude Code Agent Instructions Template | AgentCraft"
+  description: "Create the perfect CLAUDE.md for Claude Code. Free templates and examples. Generate a custom CLAUDE.md with our wizard."
+---
+
+# CLAUDE.md — Claude Code Instructions
+
+CLAUDE.md is the instruction file that Claude Code reads from your project root. It tells Claude who it is, how to behave, and what rules to follow for your specific project.
+
+<Info>
+  **Generate a custom CLAUDE.md** — Use the [AgentCraft Wizard](https://agntcraft.co/create) and select "Claude Code" as your framework. We'll generate a production-ready CLAUDE.md tailored to your needs.
+</Info>
+
+## What goes in CLAUDE.md
+
+- **Project context** — what the project is, tech stack, architecture
+- **Agent persona** — how Claude should behave in this project
+- **Coding standards** — style, conventions, patterns to follow
+- **Rules** — what to do and what NOT to do
+- **Communication** — how to report, when to ask vs decide
+
+## Template
+
+```markdown
+# CLAUDE.md
+
+## Project
+[Brief project description, tech stack, key dependencies]
+
+## Role
+[What Claude's role is in this project — developer, reviewer, architect, etc.]
+
+## Persona
+[How Claude should think and communicate — personality, tone, approach]
+
+## Standards
+- [Coding convention 1]
+- [Coding convention 2]
+- [Testing requirements]
+
+## Rules
+- [What to always do]
+- [What to never do]
+- [When to ask for confirmation]
+
+## Context
+- [Key architectural decisions]
+- [Important patterns used in this codebase]
+- [Gotchas and pitfalls]
+```
+
+## Example: Full-stack project
+
+```markdown
+# CLAUDE.md
+
+## Project
+Next.js 14 App Router + TypeScript + Tailwind CSS + MongoDB.
+E-commerce platform with Stripe payments.
+
+## Role
+Senior full-stack developer. Ship features, fix bugs, review PRs.
+
+## Persona
+Direct and efficient. Prefer working code over lengthy explanations.
+Always consider edge cases. Test everything.
+
+## Standards
+- TypeScript strict mode, no `any`
+- Tailwind for styling, no CSS modules
+- Server components by default, "use client" only when needed
+- Zod for all API validation
+
+## Rules
+- Never modify .env files
+- Always run `npx tsc --noEmit` before committing
+- Don't add dependencies without asking
+- Keep PRs under 300 lines
+```
+
+## Where to put CLAUDE.md
+
+Drop it in your project root. Claude Code reads it automatically on every session.
+
+```
+my-project/
+  CLAUDE.md    ← Claude reads this
+  src/
+  package.json
+```
+
+## Generate your CLAUDE.md
+
+[Use the AgentCraft Wizard →](https://agntcraft.co/create) — select "Claude Code" as your framework.
+
+Or browse [pre-made Claude Code configs](https://agntcraft.co/browse?framework=claude-code) on the marketplace.

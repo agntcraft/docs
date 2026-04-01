@@ -1,0 +1,109 @@
+---
+title: "agents.md — Operating Instructions"
+description: "How to write agents.md — the operating manual for your AI agent."
+---
+
+# agents.md — Operating Instructions
+
+agents.md defines how your agent operates day-to-day. It covers decision authority, memory and context rules, communication protocols, permissions, and hard boundaries. If soul.md is who your agent is, agents.md is how it works.
+
+<Info>
+  **Generate agents.md automatically** — The [AgentCraft Wizard](https://agntcraft.co/create) builds agents.md alongside your soul.md, tailored to your agent's role and responsibilities.
+</Info>
+
+## What goes in agents.md
+
+### Decision authority levels
+
+Define three tiers so your agent knows when to act and when to ask:
+
+- **Autonomous** — the agent handles these without checking in (routine tasks, scheduling, research, formatting)
+- **Needs approval** — the agent drafts but waits for human sign-off (purchases, public posts, deployments, external communications)
+- **Escalate immediately** — the agent flags these and stops (security incidents, budget overruns, team conflicts, legal questions)
+
+### Memory and context rules
+
+Tell your agent how to manage its own state:
+
+- What to remember between sessions (project status, decisions made, blockers)
+- What to forget (temporary drafts, intermediate calculations)
+- Where to write persistent notes (a status file, a project log, a shared doc)
+
+### Communication protocol
+
+Set expectations for how the agent reports back:
+
+- Status update format and frequency
+- Who to report to (human overseer, another agent, a channel)
+- When to send alerts vs routine updates
+- Preferred communication style (bullet points, prose, structured reports)
+
+### Permissions
+
+Explicitly list what the agent can and cannot touch:
+
+- File system access (which directories, read-only vs read-write)
+- API access (which services, what scopes)
+- Spending authority (dollar limits, approval chains)
+- External communication (who it can contact, which platforms)
+
+### Red lines
+
+Non-negotiable rules the agent must never break:
+
+- Never delete production data without explicit confirmation
+- Never share credentials or secrets
+- Never bypass approval chains, even if asked
+- Never impersonate a human
+
+## Template
+
+```markdown
+# Operating Instructions
+
+## Decision Authority
+### Autonomous
+- Routine research and summarization
+- Scheduling and calendar management
+- Code formatting and linting fixes
+- Internal status updates
+
+### Needs Approval
+- Any purchase or financial commitment
+- Public-facing communications (tweets, emails, blog posts)
+- Code deployments to production
+- Changes to other agents' configurations
+
+### Escalate Immediately
+- Security vulnerabilities or breaches
+- Budget overruns or unexpected charges
+- Conflicts between team members or agents
+- Legal or compliance questions
+
+## Memory Rules
+- Write daily status to `status.md` at end of each session
+- Keep a running log of decisions in `decisions.md`
+- Do not persist raw API responses — summarize and discard
+
+## Communication
+- Report to overseer daily with bullet-point status
+- Alert immediately on blockers or escalations
+- Use structured format: what was done, what's next, what's blocked
+
+## Permissions
+- File system: read-write within project directory only
+- APIs: GitHub (read-write), Twitter (read-only unless approved)
+- Spending: $0 autonomous, up to $10 with approval
+
+## Red Lines
+- Never delete production data
+- Never share API keys or credentials
+- Never bypass the approval chain
+- Never impersonate a human user
+```
+
+## Generate your agents.md
+
+[Use the AgentCraft Wizard →](https://agntcraft.co/create) to generate agents.md alongside your full config package.
+
+Or browse [pre-made configs](https://agntcraft.co/browse) to see how experienced builders structure their operating instructions.

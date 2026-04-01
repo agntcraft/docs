@@ -1,0 +1,77 @@
+---
+title: "tools.md — Integration Configs"
+description: "How to write tools.md — configure your agent's integrations and connected services."
+---
+
+# tools.md — Integration Configs
+
+tools.md documents which external services your agent connects to, how to authenticate, and usage guidelines. It serves as both a reference for the agent and a runbook for the human maintaining the integrations.
+
+<Info>
+  **Generate tools.md automatically** — The [AgentCraft Wizard](https://agntcraft.co/create) includes tools.md when you specify integrations during setup.
+</Info>
+
+## What goes in tools.md
+
+Each integration gets its own section covering:
+
+- **Service name and purpose** — what the agent uses it for
+- **Authentication** — how to connect (API key, OAuth, token)
+- **Endpoints or commands** — what the agent can call
+- **Rate limits** — how often the agent can hit the service
+- **Usage rules** — when to use it, when not to
+
+## Template
+
+```markdown
+# Tools & Integrations
+
+## Twitter / X
+- **Purpose**: Post tweets, read mentions
+- **Auth**: Bearer token via environment variable `TWITTER_BEARER_TOKEN`
+- **Rate limits**: 50 posts/day, 100 reads/15min
+- **Rules**:
+  - Never post without approval unless pre-queued
+  - Keep tweets under 280 characters
+  - No reply to trolls or negative engagement
+
+## GitHub
+- **Purpose**: Push code, create PRs, review issues
+- **Auth**: Personal access token via `GITHUB_PAT`
+- **Rate limits**: 5000 requests/hour
+- **Rules**:
+  - Always create feature branches, never push to main directly
+  - Include descriptive commit messages
+  - Request review on PRs before merging
+
+## Discord
+- **Purpose**: Post updates to team channel
+- **Auth**: Bot token via `DISCORD_BOT_TOKEN`
+- **Rate limits**: 5 messages/second per channel
+- **Rules**:
+  - Post to #updates channel only
+  - Use embeds for formatted messages
+  - Tag @team only for urgent items
+
+## Slack
+- **Purpose**: Send notifications and receive commands
+- **Auth**: Bot OAuth token via `SLACK_BOT_TOKEN`
+- **Rate limits**: 1 message/second per channel
+- **Rules**:
+  - Post to designated channels only
+  - Use threads for follow-up messages
+  - Never DM users without explicit permission
+```
+
+## Tips
+
+- **Keep secrets out of the file.** Reference environment variables, never paste actual keys.
+- **Be explicit about rate limits.** Agents will call APIs as fast as they can unless you tell them not to.
+- **Include "don't" rules.** Telling the agent what NOT to do with a service is just as important as telling it what to do.
+- **Update when integrations change.** If you rotate a key or change scopes, update tools.md so the agent knows.
+
+## Generate your tools.md
+
+[Use the AgentCraft Wizard →](https://agntcraft.co/create) — select your integrations during setup and tools.md is generated with the right structure.
+
+Or browse [pre-made configs](https://agntcraft.co/browse) to see how production agents manage their integrations.

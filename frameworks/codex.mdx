@@ -1,0 +1,57 @@
+---
+title: "Codex Setup Guide"
+description: "How to use AgentCraft configs with OpenAI Codex."
+seo:
+  title: "Codex Agent Configuration Guide — AGENTS.md Templates | AgentCraft"
+  description: "Set up your Codex agent with production-ready AGENTS.md configs. Templates, examples, and generator."
+---
+
+# Codex Setup
+
+OpenAI Codex reads `AGENTS.md` files for project-level instructions. It layers global, project, and directory-level files to build a complete instruction set.
+
+## Config mapping
+
+| AgentCraft file | Codex equivalent | Where it goes |
+|-----------------|-----------------|---------------|
+| soul.md | Merged into AGENTS.md | Project root |
+| agents.md | Merged into AGENTS.md | Project root |
+| heartbeat.md | Section in AGENTS.md | Project root |
+| identity.md | Header of AGENTS.md | Project root |
+| tools.md | Section in AGENTS.md | Project root |
+
+The AgentCraft wizard merges your config files into a single `AGENTS.md` optimized for Codex.
+
+## Quick start
+
+1. [Generate a config](https://agntcraft.co/create) — select "Codex" as framework
+2. Download the ZIP
+3. Drop `AGENTS.md` into your project root
+4. Run Codex — it reads the file automatically
+
+## File precedence
+
+Codex reads instruction files in this order, layering them:
+
+1. **`~/.codex/AGENTS.md`** — global instructions for all projects
+2. **Project root `AGENTS.md`** — project-specific instructions
+3. **Current directory `AGENTS.md`** — directory-scoped overrides
+
+Later files override earlier ones. Use global for your personal coding style, project-level for tech stack and architecture, and directory-level for module-specific rules.
+
+## Project structure
+
+```
+my-project/
+  AGENTS.md        ← Codex reads this
+  src/
+    api/
+      AGENTS.md    ← Optional: directory-scoped overrides
+    frontend/
+      AGENTS.md    ← Optional: directory-scoped overrides
+  package.json
+```
+
+## Browse Codex configs
+
+[Browse pre-made Codex configs →](https://agntcraft.co/browse?framework=codex)

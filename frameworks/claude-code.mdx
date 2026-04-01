@@ -1,0 +1,60 @@
+---
+title: "Claude Code Setup Guide"
+description: "How to use AgentCraft configs with Claude Code."
+seo:
+  title: "Claude Code Agent Configuration Guide — CLAUDE.md Templates | AgentCraft"
+  description: "Set up your Claude Code agent with production-ready CLAUDE.md configs. Templates, examples, and generator."
+---
+
+# Claude Code Setup
+
+Claude Code reads a `CLAUDE.md` file from your project root on every session. Drop it in, and Claude follows the instructions automatically. No plugin installs, no configuration UI — just a markdown file.
+
+## Config mapping
+
+| AgentCraft file | Claude Code equivalent | Where it goes |
+|-----------------|----------------------|---------------|
+| soul.md | Merged into CLAUDE.md | Project root |
+| agents.md | Merged into CLAUDE.md | Project root |
+| heartbeat.md | Reference in CLAUDE.md | Project root |
+| identity.md | Header of CLAUDE.md | Project root |
+| tools.md | Section in CLAUDE.md | Project root |
+
+The AgentCraft wizard merges your config files into a single `CLAUDE.md` optimized for Claude Code's reading pattern.
+
+## Quick start
+
+1. [Generate a config](https://agntcraft.co/create) — select "Claude Code" as framework
+2. Download the ZIP
+3. Drop `CLAUDE.md` into your project root
+4. Start a Claude Code session — it reads the file automatically
+
+## Project structure
+
+```
+my-project/
+  CLAUDE.md       ← Claude reads this on every session
+  src/
+  package.json
+  ...
+```
+
+## How Claude Code reads CLAUDE.md
+
+Claude Code loads the file at the start of every session. The entire file becomes part of Claude's context, so:
+
+- **Put the most important rules first.** Claude weighs early content more heavily.
+- **Be concise.** Every line costs context window space.
+- **Use headers and bullet points.** Structured content is easier for Claude to parse and follow.
+
+## Multiple CLAUDE.md files
+
+Claude Code also supports:
+- `~/.claude/CLAUDE.md` — global instructions across all projects
+- Subdirectory `CLAUDE.md` files — scoped instructions for specific parts of your project
+
+Project-level files override global ones. Subdirectory files layer on top of project-level ones.
+
+## Browse Claude Code configs
+
+[Browse pre-made Claude Code configs →](https://agntcraft.co/browse?framework=claude-code)

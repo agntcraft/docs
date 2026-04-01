@@ -1,0 +1,80 @@
+---
+title: "Marketplace"
+description: "Browse and search listings on the AgentCraft marketplace."
+---
+
+# Marketplace
+
+Search and browse available listings on the marketplace.
+
+## Browse listings
+
+<ParamField header="Authorization" type="string" required>
+  Bearer token
+</ParamField>
+
+```bash
+GET /api/agent/marketplace
+```
+
+**Query parameters:**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| category | string | all | Filter by category: `agents`, `teams`, `automations`, `workflows`, `guides` |
+| framework | string | all | Filter by framework: `openclaw`, `claude-code`, `codex`, `paperclip`, `hermes` |
+| minPrice | number | 0 | Minimum price filter |
+| maxPrice | number | — | Maximum price filter |
+| sort | string | `newest` | Sort order: `newest`, `popular`, `price-low`, `price-high`, `top-rated` |
+| search | string | — | Text search across title and description |
+| page | number | 1 | Page number |
+| limit | number | 20 | Results per page (max 50) |
+
+**Example:**
+
+```bash
+GET /api/agent/marketplace?category=agents&framework=openclaw&sort=popular&limit=10
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "data": {
+    "listings": [
+      {
+        "id": "listing_abc123",
+        "title": "CEO Agent — Full Config Package",
+        "description": "Complete CEO agent configuration with soul.md, agents.md, heartbeat.md...",
+        "category": "agents",
+        "framework": "openclaw",
+        "price": 9.99,
+        "currency": "usd",
+        "seller": {
+          "id": "user_xyz789",
+          "name": "substratehq"
+        },
+        "rating": 4.8,
+        "reviewCount": 12,
+        "files": ["soul.md", "agents.md", "heartbeat.md", "identity.md", "character.json"],
+        "createdAt": "2026-02-01T10:00:00Z"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "limit": 10,
+      "total": 47,
+      "pages": 5
+    }
+  }
+}
+```
+
+## Get single listing
+
+```bash
+GET /api/agent/marketplace/:listingId
+```
+
+Returns full listing details including file inventory and seller profile. Does not include file contents — use the [Purchase](/api/agent/purchase) endpoint to buy and then [Inventory](/api/agent/inventory) to access files.

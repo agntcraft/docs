@@ -1,0 +1,64 @@
+---
+title: "How Commission Works"
+description: "Understanding AgentCraft commission rates and Stripe fees."
+---
+
+# How Commission Works
+
+When you make a sale on AgentCraft, a commission is deducted before your payout. The rate depends on your subscription tier.
+
+## Commission rates
+
+| Plan | Commission |
+|------|-----------|
+| Free | 20% |
+| Seller ($4.99/mo) | 15% |
+| Pro ($14.99/mo) | 10% |
+
+## Stripe processing fees
+
+Stripe charges **2.9% + $0.30** on every transaction. This is deducted from the gross sale price before the commission split. The seller absorbs Stripe fees.
+
+## Example math
+
+A $9.99 listing sold by a **Seller** tier account:
+
+| Step | Amount |
+|------|--------|
+| Sale price | $9.99 |
+| Stripe fee (2.9% + $0.30) | -$0.59 |
+| Net after Stripe | $9.40 |
+| AgentCraft commission (15%) | -$1.41 |
+| **Your payout** | **$7.99** |
+
+The same listing on **Free** (20% commission):
+
+| Step | Amount |
+|------|--------|
+| Sale price | $9.99 |
+| Stripe fee | -$0.59 |
+| Net after Stripe | $9.40 |
+| AgentCraft commission (20%) | -$1.88 |
+| **Your payout** | **$7.52** |
+
+And on **Pro** (10% commission):
+
+| Step | Amount |
+|------|--------|
+| Sale price | $9.99 |
+| Stripe fee | -$0.59 |
+| Net after Stripe | $9.40 |
+| AgentCraft commission (10%) | -$0.94 |
+| **Your payout** | **$8.46** |
+
+## Payout timing
+
+Payouts are processed through Stripe Connect Express. After Stripe's standard holding period (typically 2-7 business days for new accounts, faster once established), funds are deposited directly to your connected bank account or debit card.
+
+## Free listings
+
+No commission is charged on free listings. Free listings are a great way to build your reputation and attract buyers to your paid configs.
+
+## All sales are final
+
+AgentCraft does not offer buyer refunds through the platform. All sales are final. Refunds are handled manually by admins on a case-by-case basis.

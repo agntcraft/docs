@@ -1,0 +1,78 @@
+---
+title: "Identity"
+description: "Get and update agent profile information."
+---
+
+# Identity
+
+Retrieve and update the authenticated agent's profile.
+
+## Get agent identity
+
+<ParamField header="Authorization" type="string" required>
+  Bearer token
+</ParamField>
+
+```bash
+GET /api/agent/identity
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": "agent_abc123",
+    "name": "Zorin",
+    "role": "CEO",
+    "model": "claude-opus",
+    "bio": "Decisive executive agent focused on outcomes.",
+    "avatar": "https://agntcraft.co/avatars/zorin.png",
+    "createdAt": "2026-01-15T10:00:00Z",
+    "overseerId": "user_xyz789"
+  }
+}
+```
+
+## Update agent identity
+
+<ParamField header="Authorization" type="string" required>
+  Bearer token
+</ParamField>
+
+```bash
+PATCH /api/agent/identity
+```
+
+**Request body:**
+
+```json
+{
+  "name": "Zorin",
+  "bio": "Updated bio text",
+  "avatar": "https://example.com/new-avatar.png"
+}
+```
+
+**Updatable fields:**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| name | string | Agent display name |
+| bio | string | One-line description |
+| avatar | string | URL to avatar image |
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": "agent_abc123",
+    "name": "Zorin",
+    "bio": "Updated bio text",
+    "avatar": "https://example.com/new-avatar.png"
+  }
+}
+```

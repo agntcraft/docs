@@ -1,0 +1,106 @@
+---
+title: "What's in a Config"
+description: "Understanding the anatomy of an AI agent configuration — soul.md, agents.md, heartbeat.md, and more."
+seo:
+  title: "What is an AI Agent Configuration? | soul.md, CLAUDE.md, AGENTS.md Guide"
+  description: "Learn what files make up an AI agent configuration. Understand soul.md, agents.md, heartbeat.md, identity.md, tools.md, and framework-specific configs."
+---
+
+# What's in a Config
+
+An AgentCraft configuration is a set of markdown files that define who your AI agent is and how it operates. Think of it as a job description, operating manual, and identity card — all in one package.
+
+## The files
+
+Every config can include up to 6 files:
+
+| File | Purpose | Required? |
+|------|---------|-----------|
+| **soul.md** | Persona, tone, boundaries, core principles — who your agent IS | Yes |
+| **agents.md** | Operating instructions, memory rules, permissions, red lines | Yes |
+| **heartbeat.md** | Periodic task checklist — what the agent does every cycle | Recommended |
+| **identity.md** | Name, role, model, avatar — the agent's public identity | Optional |
+| **tools.md** | Integration configs, API references, connected services | Optional |
+| **Framework config** | Framework-specific file (see below) | Depends |
+
+## soul.md — The persona
+
+This is the most important file. It defines who your agent is at its core:
+
+```markdown
+# Zorin
+
+## Identity
+- **Role**: CEO / Strategic Coordinator
+- **Personality**: Direct & decisive
+- **Model**: Claude Opus
+
+## Core Persona
+You are a decisive executive agent. You prioritize outcomes over process,
+communicate in clear directives, and hold your team accountable to deadlines.
+You escalate blockers immediately and never let ambiguity persist.
+
+## Boundaries
+- Never commit to timelines without checking capacity
+- Always explain the "why" behind decisions
+- Escalate financial decisions above $100 to your human
+```
+
+[Learn more about soul.md →](/configs/soul-md)
+
+## agents.md — The operating manual
+
+Defines how the agent makes decisions, what it can do alone, and when to ask for help:
+
+```markdown
+# Operating Instructions
+
+## Decision Authority
+- Autonomous: routine tasks, scheduling, research
+- Needs approval: purchases, public communications, code deployments
+- Escalate immediately: security issues, budget overruns, team conflicts
+```
+
+[Learn more about agents.md →](/configs/agents-md)
+
+## heartbeat.md — The routine
+
+A checklist the agent runs on every cycle (hourly, daily, or per framework schedule):
+
+```markdown
+# Heartbeat Routine
+
+## Every Cycle
+- [ ] Check inbox for new messages
+- [ ] Review pending tasks
+- [ ] Post scheduled tweets
+- [ ] Report status to overseer
+
+## Daily
+- [ ] Review team performance
+- [ ] Update project status
+```
+
+[Learn more about heartbeat.md →](/configs/heartbeat-md)
+
+## Framework-specific files
+
+Depending on your framework, the config includes an additional file:
+
+| Framework | File | Purpose |
+|-----------|------|---------|
+| OpenClaw | `character.json` | Agent identity and model settings |
+| Claude Code | `CLAUDE.md` | Project-level agent instructions |
+| Codex | `AGENTS.md` | Agent instructions for Codex |
+| Paperclip | `config.yaml` | Agent name, model, heartbeat policy |
+| Hermes | Placement note | Instructions for SOUL.md location |
+
+## Categories
+
+Configs are organized into 5 categories:
+
+- **Agents** — Complete single-agent configurations
+- **Teams** — Multi-agent team templates with coordination rules
+- **Automations** — Wired integrations (Twitter posting, Telegram bridge, cron)
+- **Workflows** — Multi-step operational processes and pipelines
+- **Guides** — How-to playbooks and best practices

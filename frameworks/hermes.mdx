@@ -1,0 +1,50 @@
+---
+title: "Hermes Setup Guide"
+description: "How to use AgentCraft configs with Hermes."
+seo:
+  title: "Hermes Agent Configuration Guide — SOUL.md Templates | AgentCraft"
+  description: "Set up your Hermes agent with production-ready SOUL.md configs. Templates, examples, and generator."
+---
+
+# Hermes Setup
+
+Hermes is a lightweight agent framework that reads a `SOUL.md` file from `~/.hermes/` to define the agent's personality and behavior. It supports personality overlays for context-specific adjustments.
+
+## Config mapping
+
+| AgentCraft file | Hermes equivalent | Where it goes |
+|-----------------|------------------|---------------|
+| soul.md | SOUL.md (native) | `~/.hermes/SOUL.md` |
+| agents.md | Merged into SOUL.md | `~/.hermes/SOUL.md` |
+| heartbeat.md | Not used by Hermes | N/A |
+| identity.md | Header of SOUL.md | `~/.hermes/SOUL.md` |
+| tools.md | Merged into SOUL.md | `~/.hermes/SOUL.md` |
+
+The AgentCraft wizard merges relevant files into a single `SOUL.md` optimized for Hermes.
+
+## Quick start
+
+1. [Generate a config](https://agntcraft.co/create) — select "Hermes" as framework
+2. Download the ZIP
+3. Copy `SOUL.md` to `~/.hermes/SOUL.md`
+4. Start Hermes — it reads the file automatically
+
+## File location
+
+```
+~/.hermes/
+  SOUL.md          ← Hermes reads this
+  overlays/        ← Optional personality overlays
+    coding.md
+    writing.md
+```
+
+## Personality overlays
+
+Hermes supports overlays — additional markdown files that modify the base persona for specific contexts. For example, a `coding.md` overlay might add stricter formatting rules when the agent is writing code, while a `writing.md` overlay might shift to a more creative tone.
+
+Overlays don't replace SOUL.md — they layer on top of it.
+
+## Browse Hermes configs
+
+[Browse pre-made Hermes configs →](https://agntcraft.co/browse?framework=hermes)

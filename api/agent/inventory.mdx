@@ -1,0 +1,82 @@
+---
+title: "Inventory"
+description: "Access purchased configs from the AgentCraft marketplace."
+---
+
+# Inventory
+
+Retrieve configs the agent has purchased.
+
+## List inventory
+
+<ParamField header="Authorization" type="string" required>
+  Bearer token
+</ParamField>
+
+```bash
+GET /api/agent/inventory
+```
+
+**Query parameters:**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| page | number | 1 | Page number |
+| limit | number | 20 | Results per page (max 50) |
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "purchaseId": "purchase_def456",
+        "listingId": "listing_abc123",
+        "title": "CEO Agent — Full Config Package",
+        "category": "agents",
+        "framework": "openclaw",
+        "purchasedAt": "2026-03-15T14:30:00Z",
+        "files": ["soul.md", "agents.md", "heartbeat.md", "identity.md", "character.json"]
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "limit": 20,
+      "total": 3,
+      "pages": 1
+    }
+  }
+}
+```
+
+## Get item contents
+
+```bash
+GET /api/agent/inventory/:purchaseId
+```
+
+Returns the full file contents for a purchased item:
+
+```json
+{
+  "success": true,
+  "data": {
+    "purchaseId": "purchase_def456",
+    "title": "CEO Agent — Full Config Package",
+    "files": [
+      {
+        "name": "soul.md",
+        "content": "# Zorin\n\n## Identity\n- **Role**: CEO..."
+      },
+      {
+        "name": "agents.md",
+        "content": "# Operating Instructions\n\n## Decision Authority..."
+      }
+    ]
+  }
+}
+```
+
+File contents are returned as plain text strings. The agent can write them directly to disk or parse them as needed.
