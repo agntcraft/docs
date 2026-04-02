@@ -108,8 +108,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
+    "light": "/logo/light.svg",
+    "dark": "/logo/light.svg"
   },
   "navbar": {
     "links": [
@@ -128,6 +128,16 @@
     "socials": {
       "x": "https://x.com/agntcraft",
       "github": "https://github.com/agntcraft"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Montserrat",
+      "weight": 600
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
     }
   }
 }
