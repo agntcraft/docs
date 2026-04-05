@@ -10,31 +10,39 @@ seo:
 
 Hermes is a lightweight agent framework that reads a `SOUL.md` file from `~/.hermes/` to define the agent's personality and behavior. It supports personality overlays for context-specific adjustments.
 
-## Config mapping
+## How wizard files integrate
 
-| AgentCraft file | Hermes equivalent | Where it goes |
-|-----------------|------------------|---------------|
-| soul.md | SOUL.md (native) | `~/.hermes/SOUL.md` |
-| agents.md | Merged into SOUL.md | `~/.hermes/SOUL.md` |
-| heartbeat.md | Not used by Hermes | N/A |
-| identity.md | Header of SOUL.md | `~/.hermes/SOUL.md` |
-| tools.md | Merged into SOUL.md | `~/.hermes/SOUL.md` |
+The AgentCraft wizard generates 7 universal UPPERCASE files that complement Hermes' own `SOUL.md`. The wizard does not replace Hermes' native SOUL.md — the wizard files sit alongside it, providing additional structure for identity, operating instructions, and tools.
 
-The AgentCraft wizard merges relevant files into a single `SOUL.md` optimized for Hermes.
+| Wizard file | Where it goes |
+|-------------|---------------|
+| README.md | `~/.hermes/` |
+| SOUL.md | `~/.hermes/` |
+| AGENTS.md | `~/.hermes/` |
+| USER.md | `~/.hermes/` |
+| HEARTBEAT.md | `~/.hermes/` |
+| IDENTITY.md | `~/.hermes/` |
+| TOOLS.md | `~/.hermes/` |
 
 ## Quick start
 
 1. [Generate a config](https://agntcraft.co/create) — select "Hermes" as framework
 2. Download the ZIP
-3. Copy `SOUL.md` to `~/.hermes/SOUL.md`
-4. Start Hermes — it reads the file automatically
+3. Extract the wizard files into `~/.hermes/`
+4. Start Hermes — it reads the files automatically
 
 ## File location
 
 ```
 ~/.hermes/
-  SOUL.md          ← Hermes reads this
-  overlays/        ← Optional personality overlays
+  README.md        ← Wizard output — agent reads this first
+  SOUL.md
+  AGENTS.md
+  USER.md
+  HEARTBEAT.md
+  IDENTITY.md
+  TOOLS.md
+  overlays/        ← Optional Hermes personality overlays
     coding.md
     writing.md
 ```

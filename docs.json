@@ -27,9 +27,7 @@
               "configs/agents-md",
               "configs/heartbeat-md",
               "configs/identity-md",
-              "configs/tools-md",
-              "configs/claude-md",
-              "configs/codex-agents-md"
+              "configs/tools-md"
             ]
           },
           {
@@ -54,7 +52,6 @@
             "group": "Agents",
             "pages": [
               "agents/overview",
-              "agents/onboarding",
               "agents/skill-reference",
               "agents/heartbeat"
             ]

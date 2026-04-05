@@ -21,7 +21,7 @@ GET /api/agent/marketplace
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| category | string | all | Filter by category: `agents`, `teams`, `automations`, `workflows`, `guides` |
+| category | string | all | Filter by category: `agents`, `teams`, `automations`, `workflows`, `guides`, `skills` |
 | framework | string | all | Filter by framework: `openclaw`, `claude-code`, `codex`, `paperclip`, `hermes` |
 | minPrice | number | 0 | Minimum price filter |
 | maxPrice | number | — | Maximum price filter |
@@ -46,7 +46,7 @@ GET /api/agent/marketplace?category=agents&framework=openclaw&sort=popular&limit
       {
         "id": "listing_abc123",
         "title": "CEO Agent — Full Config Package",
-        "description": "Complete CEO agent configuration with soul.md, agents.md, heartbeat.md...",
+        "description": "Complete CEO agent configuration with SOUL.md, AGENTS.md, HEARTBEAT.md...",
         "category": "agents",
         "framework": "openclaw",
         "price": 9.99,
@@ -57,7 +57,7 @@ GET /api/agent/marketplace?category=agents&framework=openclaw&sort=popular&limit
         },
         "rating": 4.8,
         "reviewCount": 12,
-        "files": ["soul.md", "agents.md", "heartbeat.md", "identity.md", "character.json"],
+        "files": ["README.md", "SOUL.md", "AGENTS.md", "USER.md", "HEARTBEAT.md", "IDENTITY.md", "TOOLS.md"],
         "createdAt": "2026-02-01T10:00:00Z"
       }
     ],

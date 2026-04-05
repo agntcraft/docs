@@ -1,9 +1,9 @@
 ---
 title: "What's in a Config"
-description: "Understanding the anatomy of an AI agent configuration — soul.md, agents.md, heartbeat.md, and more."
+description: "Understanding the anatomy of an AI agent configuration — SOUL.md, AGENTS.md, HEARTBEAT.md, and more."
 seo:
-  title: "What is an AI Agent Configuration? | soul.md, CLAUDE.md, AGENTS.md Guide"
-  description: "Learn what files make up an AI agent configuration. Understand soul.md, agents.md, heartbeat.md, identity.md, tools.md, and framework-specific configs."
+  title: "What is an AI Agent Configuration? | SOUL.md, AGENTS.md, IDENTITY.md Guide"
+  description: "Learn what files make up an AI agent configuration. Understand the 7 universal UPPERCASE files: README.md, SOUL.md, AGENTS.md, USER.md, HEARTBEAT.md, IDENTITY.md, TOOLS.md."
 ---
 
 # What's in a Config
@@ -12,18 +12,19 @@ An AgentCraft configuration is a set of markdown files that define who your AI a
 
 ## The files
 
-Every config can include up to 6 files:
+Every config includes 7 universal UPPERCASE files:
 
 | File | Purpose | Required? |
 |------|---------|-----------|
-| **soul.md** | Persona, tone, boundaries, core principles — who your agent IS | Yes |
-| **agents.md** | Operating instructions, memory rules, permissions, red lines | Yes |
-| **heartbeat.md** | Periodic task checklist — what the agent does every cycle | Recommended |
-| **identity.md** | Name, role, model, avatar — the agent's public identity | Optional |
-| **tools.md** | Integration configs, API references, connected services | Optional |
-| **Framework config** | Framework-specific file (see below) | Depends |
+| **README.md** | Entry point — the agent reads this first and internalizes the rest | Yes |
+| **SOUL.md** | Persona, tone, boundaries, core principles — who your agent IS | Yes |
+| **AGENTS.md** | Operating instructions, memory rules, permissions, red lines | Yes |
+| **USER.md** | Owner preferences, communication style, expectations | Yes |
+| **HEARTBEAT.md** | Periodic task checklist — what the agent does every cycle | Recommended |
+| **IDENTITY.md** | Name, role, model, avatar — the agent's public identity | Optional |
+| **TOOLS.md** | Integration configs, API references, connected services | Optional |
 
-## soul.md — The persona
+## SOUL.md — The persona
 
 This is the most important file. It defines who your agent is at its core:
 
@@ -46,9 +47,9 @@ You escalate blockers immediately and never let ambiguity persist.
 - Escalate financial decisions above $100 to your human
 ```
 
-[Learn more about soul.md →](/configs/soul-md)
+[Learn more about SOUL.md →](/configs/soul-md)
 
-## agents.md — The operating manual
+## AGENTS.md — The operating manual
 
 Defines how the agent makes decisions, what it can do alone, and when to ask for help:
 
@@ -61,9 +62,9 @@ Defines how the agent makes decisions, what it can do alone, and when to ask for
 - Escalate immediately: security issues, budget overruns, team conflicts
 ```
 
-[Learn more about agents.md →](/configs/agents-md)
+[Learn more about AGENTS.md →](/configs/agents-md)
 
-## heartbeat.md — The routine
+## HEARTBEAT.md — The routine
 
 A checklist the agent runs on every cycle (hourly, daily, or per framework schedule):
 
@@ -74,33 +75,28 @@ A checklist the agent runs on every cycle (hourly, daily, or per framework sched
 - [ ] Check inbox for new messages
 - [ ] Review pending tasks
 - [ ] Post scheduled tweets
-- [ ] Report status to overseer
+- [ ] Report status to owner
 
 ## Daily
 - [ ] Review team performance
 - [ ] Update project status
 ```
 
-[Learn more about heartbeat.md →](/configs/heartbeat-md)
+[Learn more about HEARTBEAT.md →](/configs/heartbeat-md)
 
-## Framework-specific files
+## Universal files, any framework
 
-Depending on your framework, the config includes an additional file:
+The wizard generates 7 universal UPPERCASE files that work with any agent framework. These files complement the framework's own config — they sit alongside it, not instead of it. Your agent reads README.md first, internalizes its identity, and integrates into whatever framework it runs on.
 
-| Framework | File | Purpose |
-|-----------|------|---------|
-| OpenClaw | `character.json` | Agent identity and model settings |
-| Claude Code | `CLAUDE.md` | Project-level agent instructions |
-| Codex | `AGENTS.md` | Agent instructions for Codex |
-| Paperclip | `config.yaml` | Agent name, model, heartbeat policy |
-| Hermes | Placement note | Instructions for SOUL.md location |
+See the [framework guides](/frameworks/openclaw) for details on how wizard files integrate with each specific framework.
 
 ## Categories
 
-Configs are organized into 5 categories:
+Configs are organized into 6 categories:
 
 - **Agents** — Complete single-agent configurations
 - **Teams** — Multi-agent team templates with coordination rules
 - **Automations** — Wired integrations (Twitter posting, Telegram bridge, cron)
 - **Workflows** — Multi-step operational processes and pipelines
 - **Guides** — How-to playbooks and best practices
+- **Skills** — Installable capabilities and integrations

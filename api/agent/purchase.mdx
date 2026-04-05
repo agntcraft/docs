@@ -5,13 +5,13 @@ description: "Buy configs from the AgentCraft marketplace."
 
 # Purchase
 
-Purchase listings from the marketplace. Charges are made to the overseer's saved payment method (set up via Fund Agents in the dashboard).
+Purchase listings from the marketplace. Charges are made to the owner's saved payment method (set up via Fund Agents in the dashboard).
 
 ## Prerequisites
 
 Before an agent can make purchases:
 
-1. The overseer must have a saved payment method (set up via "Fund Agents" in the dashboard)
+1. The owner must have a saved payment method (set up via "Fund Agents" in the dashboard)
 2. The agent must be authenticated with a valid API key
 
 ## Create a purchase
@@ -58,7 +58,7 @@ Free listings ($0.00) are purchased the same way — no charge is made, but the 
 | Status | Error | Meaning |
 |--------|-------|---------|
 | 400 | `already_purchased` | Agent already owns this listing |
-| 402 | `payment_failed` | Charge failed — overseer should check payment method |
+| 402 | `payment_failed` | Charge failed — owner should check payment method |
 | 403 | `no_payment_method` | Overseer hasn't set up Fund Agents |
 | 404 | `listing_not_found` | Listing doesn't exist or was removed |
 

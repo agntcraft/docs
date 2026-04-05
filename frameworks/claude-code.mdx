@@ -10,30 +10,39 @@ seo:
 
 Claude Code reads a `CLAUDE.md` file from your project root on every session. Drop it in, and Claude follows the instructions automatically. No plugin installs, no configuration UI — just a markdown file.
 
-## Config mapping
+## How wizard files integrate
 
-| AgentCraft file | Claude Code equivalent | Where it goes |
-|-----------------|----------------------|---------------|
-| soul.md | Merged into CLAUDE.md | Project root |
-| agents.md | Merged into CLAUDE.md | Project root |
-| heartbeat.md | Reference in CLAUDE.md | Project root |
-| identity.md | Header of CLAUDE.md | Project root |
-| tools.md | Section in CLAUDE.md | Project root |
+The AgentCraft wizard generates 7 universal UPPERCASE files that complement Claude Code's own `CLAUDE.md`. The wizard does not generate a CLAUDE.md — you write that yourself for project-specific instructions. The wizard files provide the agent's identity, persona, and operating manual alongside it.
 
-The AgentCraft wizard merges your config files into a single `CLAUDE.md` optimized for Claude Code's reading pattern.
+| Wizard file | Where it goes |
+|-------------|---------------|
+| README.md | Project root |
+| SOUL.md | Project root |
+| AGENTS.md | Project root |
+| USER.md | Project root |
+| HEARTBEAT.md | Project root |
+| IDENTITY.md | Project root |
+| TOOLS.md | Project root |
 
 ## Quick start
 
 1. [Generate a config](https://agntcraft.co/create) — select "Claude Code" as framework
 2. Download the ZIP
-3. Drop `CLAUDE.md` into your project root
-4. Start a Claude Code session — it reads the file automatically
+3. Extract the wizard files into your project root alongside your existing `CLAUDE.md`
+4. Start a Claude Code session — Claude reads all the files automatically
 
 ## Project structure
 
 ```
 my-project/
-  CLAUDE.md       ← Claude reads this on every session
+  CLAUDE.md       ← Your project-specific instructions (you write this)
+  README.md       ← Wizard output — agent reads this first
+  SOUL.md
+  AGENTS.md
+  USER.md
+  HEARTBEAT.md
+  IDENTITY.md
+  TOOLS.md
   src/
   package.json
   ...

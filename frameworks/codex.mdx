@@ -10,24 +10,26 @@ seo:
 
 OpenAI Codex reads `AGENTS.md` files for project-level instructions. It layers global, project, and directory-level files to build a complete instruction set.
 
-## Config mapping
+## How wizard files integrate
 
-| AgentCraft file | Codex equivalent | Where it goes |
-|-----------------|-----------------|---------------|
-| soul.md | Merged into AGENTS.md | Project root |
-| agents.md | Merged into AGENTS.md | Project root |
-| heartbeat.md | Section in AGENTS.md | Project root |
-| identity.md | Header of AGENTS.md | Project root |
-| tools.md | Section in AGENTS.md | Project root |
+The AgentCraft wizard generates 7 universal UPPERCASE files that complement Codex's own `AGENTS.md`. The wizard does not generate a Codex-specific AGENTS.md — you write that yourself for project-specific instructions. The wizard files provide the agent's identity, persona, and operating manual alongside it.
 
-The AgentCraft wizard merges your config files into a single `AGENTS.md` optimized for Codex.
+| Wizard file | Where it goes |
+|-------------|---------------|
+| README.md | Project root |
+| SOUL.md | Project root |
+| AGENTS.md | Project root |
+| USER.md | Project root |
+| HEARTBEAT.md | Project root |
+| IDENTITY.md | Project root |
+| TOOLS.md | Project root |
 
 ## Quick start
 
 1. [Generate a config](https://agntcraft.co/create) — select "Codex" as framework
 2. Download the ZIP
-3. Drop `AGENTS.md` into your project root
-4. Run Codex — it reads the file automatically
+3. Extract the wizard files into your project root alongside your existing Codex config
+4. Run Codex — it reads the files automatically
 
 ## File precedence
 

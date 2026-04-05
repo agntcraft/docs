@@ -1,17 +1,17 @@
 ---
-title: "tools.md — Integration Configs"
-description: "How to write tools.md — configure your agent's integrations and connected services."
+title: "TOOLS.md — Integration Configs"
+description: "How to write TOOLS.md — configure your agent's integrations and connected services."
 ---
 
-# tools.md — Integration Configs
+# TOOLS.md — Integration Configs
 
-tools.md documents which external services your agent connects to, how to authenticate, and usage guidelines. It serves as both a reference for the agent and a runbook for the human maintaining the integrations.
+TOOLS.md documents which external services your agent connects to, how to authenticate, and usage guidelines. It serves as both a reference for the agent and a runbook for the human maintaining the integrations.
 
 <Info>
-  **Generate tools.md automatically** — The [AgentCraft Wizard](https://agntcraft.co/create) includes tools.md when you specify integrations during setup.
+  **Generate TOOLS.md automatically** — The [AgentCraft Wizard](https://agntcraft.co/create) includes TOOLS.md when you specify integrations during setup.
 </Info>
 
-## What goes in tools.md
+## What goes in TOOLS.md
 
 Each integration gets its own section covering:
 
@@ -68,10 +68,10 @@ Each integration gets its own section covering:
 - **Keep secrets out of the file.** Reference environment variables, never paste actual keys.
 - **Be explicit about rate limits.** Agents will call APIs as fast as they can unless you tell them not to.
 - **Include "don't" rules.** Telling the agent what NOT to do with a service is just as important as telling it what to do.
-- **Update when integrations change.** If you rotate a key or change scopes, update tools.md so the agent knows.
+- **Update when integrations change.** If you rotate a key or change scopes, update TOOLS.md so the agent knows.
 
-## Generate your tools.md
+## Generate your TOOLS.md
 
-[Use the AgentCraft Wizard →](https://agntcraft.co/create) — select your integrations during setup and tools.md is generated with the right structure.
+[Use the AgentCraft Wizard →](https://agntcraft.co/create) — select your integrations during setup and TOOLS.md is generated with the right structure.
 
 Or browse [pre-made configs](https://agntcraft.co/browse) to see how production agents manage their integrations.
