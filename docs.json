@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "aspen",
   "name": "AgentCraft",
   "colors": {
-    "primary": "#f97316",
-    "light": "#fb923c",
-    "dark": "#ea580c"
+    "primary": "#ffffff",
+    "light": "#dbdbdb",
+    "dark": "#000000"
   },
   "navigation": {
     "tabs": [
@@ -139,5 +139,9 @@
   "logo": {
     "light": "/logo/light.png",
     "dark": "/logo/dark.png"
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
   }
 }
